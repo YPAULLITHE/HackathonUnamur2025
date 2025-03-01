@@ -3,6 +3,12 @@ import { Link, Outlet, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown, faAngleRight, faBars } from "@fortawesome/free-solid-svg-icons"
 
+
+const member = {
+  points:100,
+  img:"https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+}
+
 export default function Layout() {
   let location = useLocation()
 
@@ -95,9 +101,10 @@ export default function Layout() {
           </label>
         </section>
         <section className="navbar-end">
+          {member.points}
           <div className="avatar">
             <div className="h-8 rounded-full">
-              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src={member.img} />
             </div>
           </div>
         </section>
