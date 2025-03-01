@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom"
 
 const events = {
   Tech: [
@@ -20,6 +23,13 @@ const events = {
 };
 
 const EventCarousel = () => {
+  //const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/events").then((response) => {
+      //setEvents(response.data);
+    });
+  }, []);
   const scrollRefs = {}; // Store refs dynamically for each category
 
   Object.keys(events).forEach(category => {
@@ -66,7 +76,7 @@ const EventCarousel = () => {
                   <div className="p-4">
                     <h2 className="text-lg font-semibold">{event.title}</h2>
                     <p className="text-gray-500">📅 {event.date}</p>
-                    <button className="btn btn-primary mt-2">Participate</button>
+                    <Link to={"/event"} className={"bg-accent text-accent-content"}>Participate</Link>
                     <button className="btn btn-primary mt-2">Help</button>
                   </div>
                 </div>

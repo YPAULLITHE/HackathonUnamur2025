@@ -1,6 +1,6 @@
 import React from "react"
-import Greeter from "../components/greeter"
 import EventCarousel from "../components/EventCarroussel"
+import EventDetail from "./event"
 
 export default function Home() {
   return (

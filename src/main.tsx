@@ -5,6 +5,7 @@ import "./index.css"
 import Layout from "./layout"
 import AboutRoute from "./routes/about"
 import HomeRoute from "./routes/home"
+import Event from "./routes/event"
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutRoute />,
+      },
+      {
+        path: "/event",
+        element: <Event />,
       },
     ],
   },
