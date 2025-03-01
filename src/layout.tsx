@@ -34,20 +34,6 @@ export default function Layout() {
         <li>
           <LinkWithStyle to={"/about"}>About</LinkWithStyle>
         </li>
-        <li>
-          <a>
-            Parent
-            <FontAwesomeIcon icon={expandIcon} />
-          </a>
-          <ul className="p-2 bg-base-100">
-            <li>
-              <a>Submenu 1</a>
-            </li>
-            <li>
-              <a>Submenu 2</a>
-            </li>
-          </ul>
-        </li>
       </>
     )
   }
@@ -65,7 +51,6 @@ export default function Layout() {
               {menu("vertical")}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">PWA 😎</a>
           {/* desktop menu */}
           <ul className="menu menu-horizontal px-1 hidden lg:flex z-10">{menu("horizontal")}</ul>
           <label className="flex cursor-pointer gap-2">
@@ -101,7 +86,12 @@ export default function Layout() {
           </label>
         </section>
         <section className="navbar-end">
-          {member.points}
+                <div className="stats bg-base-100 border border-base-300">
+                  <div className="stat">
+                    <div className="stat-title">Social Points</div>
+                    <div className="stat-value">{member.points}</div>
+                </div>
+                </div>
           <div className="avatar">
             <div className="h-8 rounded-full">
               <img src={member.img} />
