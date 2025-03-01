@@ -12,7 +12,7 @@ module.exports = {
           dark: "#1f2937", // Dark gray (gray-900)
         },
         secondary: "#A7F3D0", // Light green (tailwind-green-300)
-        accent: "#FFFFFF", // White
+        accent: "#4CAF50", // White
       },
     },
   },
@@ -24,7 +24,7 @@ module.exports = {
         mytheme: {
           "primary": "#4CAF50", // Green
           "secondary": "#A7F3D0", // Light green
-          "accent": "#FFFFFF", // White
+          "accent": "#4CAF50", // White
           "neutral": "#1f2937", // Dark gray
           "base-100": "#f3f4f6", // Light gray background
           "info": "#2094f3",
