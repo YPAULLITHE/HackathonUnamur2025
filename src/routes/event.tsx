@@ -1,20 +1,35 @@
 import React from 'react';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import events from "../components/EventCarroussel"
+import axios from "axios"
 
 const Event = () => {
+  const { id } = useParams(); // Get event ID from URL
+  const [events, setEvent] = useState(null); // Store a single event
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/events/${id}`)
+      .then((response) => setEvent(response.data))
+      .catch((error) => console.error("Error fetching event:", error));
+  }, [id]); // Runs effect when `id` changes
+
+  if (!events) {
+    return <p>No events found...</p>;
+  }
   return (
-    <div className="h-full p-4">
     <div className="event-detail-container">
       {/* Image de l'événement */}
       <div className="event-image">
-        <img src="https://via.placeholder.com/600x300" alt="Event" />
+        <img src="${events.img}" alt="Event" />
       </div>
 
       {/* Description de l'événement */}
       <div className="event-description">
-        <h1>Nom de l'événement</h1>
+        <h1>{events.name}</h1>
         <p>
-          Description de l'événement. Cet événement est organisé pour ... 
-          (Ajoute ici plus de détails comme la date, l'heure, le lieu, etc.)
+          {events.description}
         </p>
       </div>
 
@@ -31,7 +46,6 @@ const Event = () => {
           <button className="option-btn">Participer</button>
         </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
 
@@ -76,8 +76,7 @@ const EventCarousel = () => {
                   <div className="p-4">
                     <h2 className="text-lg font-semibold">{event.title}</h2>
                     <p className="text-gray-500">📅 {event.date}</p>
-                    <Link to={"/event"} className={"bg-accent text-accent-content"}>Participate</Link>
-                    <button className="btn btn-primary mt-2">Help</button>
+                    <Link to={`/event/${event.id}`} className="bg-accent text-accent-content btn btn-primary mt-2">Participate/Help</Link>
                   </div>
                 </div>
               ))}
