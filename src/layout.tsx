@@ -3,6 +3,12 @@ import { Link, Outlet, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown, faAngleRight, faBars } from "@fortawesome/free-solid-svg-icons"
 
+
+const member = {
+  points:100,
+  img:"https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+}
+
 export default function Layout() {
   let location = useLocation()
 
@@ -28,20 +34,6 @@ export default function Layout() {
         <li>
           <LinkWithStyle to={"/about"}>About</LinkWithStyle>
         </li>
-        <li>
-          <a>
-            Parent
-            <FontAwesomeIcon icon={expandIcon} />
-          </a>
-          <ul className="p-2 bg-base-100">
-            <li>
-              <a>Submenu 1</a>
-            </li>
-            <li>
-              <a>Submenu 2</a>
-            </li>
-          </ul>
-        </li>
       </>
     )
   }
@@ -59,14 +51,50 @@ export default function Layout() {
               {menu("vertical")}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">PWA 😎</a>
           {/* desktop menu */}
           <ul className="menu menu-horizontal px-1 hidden lg:flex z-10">{menu("horizontal")}</ul>
+          <label className="flex cursor-pointer gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round">
+              <circle cx="12" cy="12" r="5" />
+              <path
+                d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+            </svg>
+
+            <input type="checkbox" value="dracula" className="toggle theme-controller" />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </label>
         </section>
         <section className="navbar-end">
+                <div className="stats bg-base-100 border border-base-300">
+                  <div className="stat">
+                    <div className="stat-title">Social Points</div>
+                    <div className="stat-value">{member.points}</div>
+                </div>
+                </div>
           <div className="avatar">
             <div className="h-8 rounded-full">
-              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src={member.img} />
             </div>
           </div>
         </section>
