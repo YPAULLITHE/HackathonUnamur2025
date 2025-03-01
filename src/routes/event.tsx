@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import events from "../components/EventCarroussel"
 import axios from "axios"
+import get_events from "../backend/routes.py"
 
 const Event = () => {
   const { id } = useParams(); // Get event ID from URL
-  const [events, setEvent] = useState(null); // Store a single event
+  const [event, setEvent] = useState([]); // Store a single event
 
   useEffect(() => {
     axios
@@ -15,21 +16,21 @@ const Event = () => {
       .catch((error) => console.error("Error fetching event:", error));
   }, [id]); // Runs effect when `id` changes
 
-  if (!events) {
+  if (!event) {
     return <p>No events found...</p>;
   }
   return (
     <div className="event-detail-container">
       {/* Image de l'événement */}
       <div className="event-image">
-        <img src="${events.img}" alt="Event" />
+        <img src="{events.img}" alt="Event" />
       </div>
 
       {/* Description de l'événement */}
       <div className="event-description">
-        <h1>{events.name}</h1>
+        <h1>{event.name}</h1>
         <p>
-          {events.description}
+          {event.description}
         </p>
       </div>
 

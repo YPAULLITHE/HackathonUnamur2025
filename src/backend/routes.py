@@ -23,16 +23,16 @@ def seed_database():
 
     if Event.query.first() is None:  # Vérifier si la table est vide
         sample_events = [
-            Event(name="Concert Rock", date="2025-06-15"),
-            Event(name="Conférence AI", date="2025-07-01"),
-            Event(name="Exposition Art", date="2025-08-20"),
+            Event(id=1, name="Concert Rock", date="2025-06-15"),
+            Event(id=2, name="Conférence AI", date="2025-07-01"),
+            Event(id=3, name="Exposition Art", date="2025-08-20"),
         ]
         db.session.add_all(sample_events)
         db.session.commit()
         print("✅ Données initiales ajoutées !")
 
 # Récupérer tous les événements
-@app.route("/events", methods=["GET"])
+@app.route("/event", methods=["GET"])
 def get_events():
     events = Event.query.all()
     return jsonify([{"id": e.id, "name": e.name, "date": e.date} for e in events])
