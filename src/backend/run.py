@@ -1,6 +1,4 @@
-from routes import create_app
-
-app = create_app()  # Initialise l’application Flask
+from init_db import app
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
