@@ -1,11 +1,7 @@
 # HackathonUnamur2025
 
-npx create-react-app my-event-platform --template cra-template-pwa
-cd my-event-platform
+cd my-event-platform/my-app
 npm install
-npm install lucide-react tailwindcss @shadcn/ui
-npm install -D tailwindcss postcss autoprefixer
-npm audit fix --force
-npx tailwindcss init -p
+npm install lucide-react @shadcn/ui
 
 npm start
