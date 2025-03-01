@@ -30,3 +30,17 @@ leave everything as is except for build command, change it to `pnpm build`
 ## 🔣 Generate your app icons
 1. upload svg or png [here](https://realfavicongenerator.net/) and download the zip file
 2. extract the images in the `public` folder
+
+## installer pour le backend 
+python -m venv venv
+source venv/bin/activate  # Sur macOS/Linux
+venv\Scripts\activate     # Sur Windows
+
+pip install flask flask-cors flask-sqlalchemy
+pip freeze > requirements.txt
+
+## lancer le backend 
+cd .\src\backend
+source venv/bin/activate  # Active l'environnement virtuel mac/linux
+venv\Scripts\activate     # " "                            windows
+python run.py
