@@ -63,7 +63,7 @@ const EventCarousel = () => {
           {/* Scroll Left Button */}
           <button
             onClick={() => scrollLeft(category)}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 btn btn-circle btn-outline"
+            className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 btn btn-circle btn-outline"
           >
             ❮
           </button>
@@ -90,7 +90,7 @@ const EventCarousel = () => {
           {/* Scroll Right Button */}
           <button
             onClick={() => scrollRight(category)}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 btn btn-circle btn-outline"
+            className="absolute -right-12 top-1/2 transform -translate-y-1/2 z-10 btn btn-circle btn-outline"
           >
             ❯
           </button>

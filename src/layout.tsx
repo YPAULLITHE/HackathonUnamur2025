@@ -51,6 +51,9 @@ export default function Layout() {
           {/* desktop menu */}
           <ul className="menu menu-horizontal px-1 hidden lg:flex z-10">{menu("horizontal")}</ul>
         </section>
+        <section className="navbar-middle w-full">
+          <img src="src/th.jpg"></img>
+        </section>
         <section className="navbar-end">
                 <div className="stats bg-base-100 border border-base-300">
                   <div className="stat">
