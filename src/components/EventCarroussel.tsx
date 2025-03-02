@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom"
 
 const events = {
-  Tech: [
+  Technologie: [
     { id: 1, title: "AI & ML Conference", date: "March 15, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
     { id: 2, title: "Cybersecurity Workshop", date: "March 20, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
     { id: 3, title: "Cloud Computing Expo", date: "March 22, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
@@ -16,7 +16,7 @@ const events = {
     { id: 4, title: "Startup Pitch Night", date: "March 25, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
     { id: 5, title: "Investment Strategies", date: "March 28, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" }
   ],
-  Community: [
+  Communité: [
     { id: 6, title: "Charity Run", date: "April 5, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
     { id: 7, title: "Environmental Cleanup", date: "April 10, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" }
   ]
@@ -50,11 +50,11 @@ const EventCarousel = () => {
 
   return (
     <div className="p-6 space-y-10 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">Upcoming Events</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">Evènements à venir</h1>
 
       {Object.keys(events).map(category => (
         <div key={category} className="relative">
-          <h2 className="text-2xl font-semibold mb-4">{category} Events</h2>
+          <h2 className="text-2xl font-semibold mb-4">{category} Evènements</h2>
 
           {/* Scroll Left Button */}
           <button
@@ -76,7 +76,7 @@ const EventCarousel = () => {
                   <div className="p-4">
                     <h2 className="text-lg font-semibold">{event.title}</h2>
                     <p className="text-gray-500">📅 {event.date}</p>
-                    <Link to={`/event/${event.id}`} className="bg-accent text-accent-content btn btn-primary mt-2">Participate/Help</Link>
+                    <Link to={`/event/${event.id}`} className="bg-accent text-accent-content btn btn-primary mt-2">Participer/Aider</Link>
                   </div>
                 </div>
               ))}

@@ -39,13 +39,14 @@ const Event = () => {
         <div className="option">
           <h3 className="text-2xl font-semibold mb-4">Collaborateurs</h3>
           <p className="text-xl font-semibold mb-4">Gagnez des pièces virtuelles pour votre participation !</p>
-          <button className="bg-accent text-accent-content btn btn-primary mt-2">Devenir Collaborateur</button>
+          <button className="bg-accent text-accent-content btn btn-primary mt-2">Collaborer</button>
         </div>
         <br></br>
         <div className="option">
           <h3 className="text-2xl font-semibold mb-4">Participants</h3>
           <p className="text-xl font-semibold mb-4">Participez et dépensez de l'argent ou des pièces virtuelles !</p>
-          <button className="bg-accent text-accent-content btn btn-primary mt-2">Participer</button>
+          <button className="bg-accent text-accent-content btn btn-primary mt-2">Participer €</button>&nbsp;&nbsp;
+          <button className="bg-accent text-accent-content btn btn-primary mt-2">Participer 🏆</button>
         </div>
       </div>
     </div>
