@@ -29,14 +29,14 @@ export default function Layout() {
     return (
       <>
         <li>
-          <LinkWithStyle to={"/"}>Acceuil</LinkWithStyle>
+          <LinkWithStyle to={"/"}><p className="text-xl font-semibold mb-4">Acceuil</p></LinkWithStyle>
         </li>
       </>
     )
   }
 
   return (
-    <div className="bg-base-300 h-screen flex flex-col">
+    <div className="bg-base-300 h-screen flex-col">
       <div className="navbar bg-base-100">
         <section className="navbar-start w-full">
           {/* mobile menu */}
@@ -54,12 +54,13 @@ export default function Layout() {
         <section className="navbar-end">
                 <div className="stats bg-base-100 border border-base-300">
                   <div className="stat">
-                    <div className="stat-title">Social Points</div>
+                    <div className="stat-title">Social Credits</div>
                     <div className="stat-value">{member.points} 🏆</div>
                 </div>
                 </div>
           <div className="avatar">
-            <div className="h-8 rounded-full">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            <div className="h-16 rounded-full">
               <img src={member.img} />
             </div>
           </div>

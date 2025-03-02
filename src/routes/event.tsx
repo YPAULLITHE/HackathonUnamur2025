@@ -1,52 +1,68 @@
-import React from 'react';
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import events from "../components/EventCarroussel"
-import axios from "axios"
-import get_events from "../backend/routes.py"
+import axios from "axios";
 
 const Event = () => {
-  const { id } = useParams(); // Get event ID from URL
-  const [event, setEvent] = useState([]); // Store a single event
+  const { id } = useParams();
+  const [event, setEvent] = useState(null);
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/events/${id}`)
       .then((response) => setEvent(response.data))
       .catch((error) => console.error("Error fetching event:", error));
-  }, [id]); // Runs effect when `id` changes
+  }, [id]);
 
-  if (!event) {
-    return <p>No events found...</p>;
-  }
+  //if (!event) {
+  //  return <p>No events found...</p>;
+  //}
+
   return (
-    <div className="text-center">
-      {/* Image de l'événement */}
-      <div className="event-image">
-        <img src="{event.img}" />
-      </div>
+    <div className="text-center p-8">
+      {/* Event Image & Description Container */}
+      <div className="flex items-center justify-start gap-20 pl-20">
+        {/* Event Image */}
+        <img
+          src="https://raw.githubusercontent.com/YPAULLITHE/HackathonUnamur2025/refs/heads/main/docs/437938802_1229657708187908_8654954303240220465_n.jpg"
+          className="max-w-[800px] w-full border-4 border-gray-500 rounded-lg shadow-lg"
+        />
 
-      {/* Description de l'événement */}
-      <div className="event-description">
-        <h1 className="text-3xl font-bold text-center mb-6">{event.name}</h1>
-        <p>
-          {event.description}
-        </p>
-      </div>
-
-      {/* Choix pour les collaborateur et participant */}
-      <div className="event-options">
-        <div className="option">
-          <h3 className="text-2xl font-semibold mb-4">Collaborateurs</h3>
-          <p className="text-xl font-semibold mb-4">Gagnez des pièces virtuelles pour votre participation !</p>
-          <button className="bg-accent text-accent-content btn btn-primary mt-2">Collaborer</button>
+        {/* Event Description with White Background */}
+        <div className="bg-white p-6 rounded-xl shadow-md max-w-lg ml-12">
+          <h1 className="text-3xl font-bold">Barbecue fin d'année</h1>
+          <p className="mt-4 text-lg text-gray-700">
+            Nous vous invitons tous pour boire et fêter autour du feu de joie!<br />
+            Venez nombreux et venez joyeux!<br />
+          </p>
         </div>
-        <br></br>
-        <div className="option">
-          <h3 className="text-2xl font-semibold mb-4">Participants</h3>
-          <p className="text-xl font-semibold mb-4">Participez et dépensez de l'argent ou des pièces virtuelles !</p>
-          <button className="bg-accent text-accent-content btn btn-primary mt-2">Participer €</button>&nbsp;&nbsp;
-          <button className="bg-accent text-accent-content btn btn-primary mt-2">Participer 🏆</button>
+      </div>
+
+      {/* Collaborateurs & Participants Section */}
+      <div className="flex justify-center items-start mt-20 gap-16">
+        {/* Collaborateurs */}
+        <div className="bg-white p-6 rounded-xl shadow-md flex-1 max-w-md">
+          <h3 className="text-2xl font-semibold mb-2">Collaborateurs</h3>
+          <p className="text-lg text-gray-700 mb-4">
+            Gagnez des pièces virtuelles pour votre participation !
+          </p>
+          <button className="bg-green-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-600">
+            Collaborer +5🏆
+          </button>
+        </div>
+
+        {/* Participants */}
+        <div className="bg-white p-6 rounded-xl shadow-md flex-1 max-w-md">
+          <h3 className="text-2xl font-semibold mb-2">Participants</h3>
+          <p className="text-lg text-gray-700 mb-4">
+            Participez et dépensez de l'argent ou des pièces virtuelles !
+          </p>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600">
+            Participer 10€
+          </button>
+          &nbsp;&nbsp;
+          <button className="bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600">
+            Participer -10🏆
+          </button>
         </div>
       </div>
     </div>

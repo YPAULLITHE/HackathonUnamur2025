@@ -4,21 +4,21 @@ import axios from "axios";
 import { Link } from "react-router-dom"
 
 const events = {
-  Technologie: [
-    { id: 1, title: "AI & ML Conference", date: "March 15, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
-    { id: 2, title: "Cybersecurity Workshop", date: "March 20, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
-    { id: 3, title: "Cloud Computing Expo", date: "March 22, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
-    { id: 8, title: "AI & ML Conference", date: "March 15, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
-    { id: 9, title: "Cybersecurity Workshop", date: "March 20, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
-    { id: 10, title: "Cloud Computing Expo", date: "March 22, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" }
+  Festivité: [
+    { id: 1, title: "Barbecue Arsenal", date: "30 Avril, 2025", img: "https://raw.githubusercontent.com/YPAULLITHE/HackathonUnamur2025/refs/heads/main/docs/437938802_1229657708187908_8654954303240220465_n.jpg" },
+    { id: 2, title: "Soirée bière spéciale", date: "20 Mars, 2025", img: "https://github.com/YPAULLITHE/HackathonUnamur2025/blob/main/docs/480699643_1045666430923724_5676376053585366419_n.jpg?raw=true" },
+    { id: 3, title: "Bunker zoo", date: "7 Mars, 2025", img: "https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/480513275_1178003550997476_6568865354911535841_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=75d36f&_nc_ohc=pykb7DOZdMgQ7kNvgEFPGP_&_nc_oc=AdhHazlr_ybCkcjUwIBiDbQyCZ7qdMVz7U7uAJl1evXo23cwQsjG9s0NEC6l0R0sBLk&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=Ap9FT2k5pvQm3grtxTqOK3s&oh=00_AYAPtIoYoqLZUC-IGWZop5UsjI62cBTsXSWkd_eY9GVdHg&oe=67CA03B8" },
+    { id: 8, title: "Tournoi de kicker", date: "5 Avril, 2025", img: "https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/480278858_1045660824257618_7714849073882557614_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=75d36f&_nc_ohc=rHK60XcRxRoQ7kNvgGFWMFE&_nc_oc=Adh0djzeWrKtW82Gx1jmWITsKUnpe00bdMGd3VyewkPGsadCK2O1df3ITHhZ8Efhfa0&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=A5sD9zfaLalipT6UbA60Fgv&oh=00_AYAGJMQTDpQxUVJy9BJ7p9B6FrrC6EJRwfGTLDfGl-59Dw&oe=67C9E3D2" },
+    { id: 9, title: "Aprem crêpes", date: "2 Juin, 2025", img: "https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/476438733_1045662027590831_6795623185965163209_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=75d36f&_nc_ohc=TAtlXBdgpPQQ7kNvgGr9ymN&_nc_oc=AdhGRQo7nTO6hO4g-9TNs9-j07O_B4R41w2Go-bFQvggaM8LdGLN6KpVDFsY-FHaOjY&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=ANlvSY0ec8KzzzF_ydOm-Gl&oh=00_AYBieqYI00Bm-Rpu0XIKvUZEf_dNcDvBe98clkvIxSWSgA&oe=67CA012B" },
+    { id: 10, title: "Boursière info", date: "12 Mars, 2025", img: "https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/467495809_1102401215224377_3422725987919114639_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=5WrE7tNJJtkQ7kNvgHrGi-7&_nc_oc=AdgYylH6P-uMI9M89NIElWvJtdwUl9dAjESWMdoCQnYe2tIwJXjI_P6IgmGLThvFvkc&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=Aytowwl6DLOx2oNYbuZqaKS&oh=00_AYCBo6sRI4H2NyJvySUjFUjJ3H7Bc8BN8_g4R17OxxvS5A&oe=67C9E1E7" }
   ],
-  Business: [
-    { id: 4, title: "Startup Pitch Night", date: "March 25, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
-    { id: 5, title: "Investment Strategies", date: "March 28, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" }
+  Challenge: [
+    { id: 4, title: "Hackathon", date: "28 Fevrier, 2025", img: "https://github.com/YPAULLITHE/HackathonUnamur2025/blob/main/docs/469367132_1145684867557710_8947962050855156416_n.jpg?raw=true" },
+    { id: 5, title: "Run in the woods", date: "3 Mai, 2025", img: "https://github.com/YPAULLITHE/HackathonUnamur2025/blob/main/docs/475463860_122135677430398677_3422370720271383604_n.jpg?raw=true" }
   ],
-  Communité: [
-    { id: 6, title: "Charity Run", date: "April 5, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" },
-    { id: 7, title: "Environmental Cleanup", date: "April 10, 2025", img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" }
+  Gala: [
+    { id: 6, title: "Projection de film", date: "April 5, 2025", img: "https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/480335092_1250437063515846_3653262893540269418_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=75d36f&_nc_ohc=oLibXJPbmXoQ7kNvgEGOQwa&_nc_oc=AdhVRPeVOp7_8Q3VfVwUr4-HystLmVEv6XsDFowxbxPHCLufw10bsVNgDm2jjUcPpHg&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=AnIEvayAXprQvk38rNuM4jF&oh=00_AYCgXN6Yk06rJC8N2jQTyqrrUYLvwuClggEzpXTYSKU8FA&oe=67C9E7B7" },
+    { id: 7, title: "Gala philo", date: "4 Mars, 2025", img: "https://github.com/YPAULLITHE/HackathonUnamur2025/blob/main/docs/480240133_1141482037762917_8321010484430975463_n.jpg?raw=true" }
   ]
 };
 
@@ -50,6 +50,10 @@ const EventCarousel = () => {
 
   return (
     <div className="p-6 space-y-10 max-w-6xl mx-auto">
+      <h2 className="text-center text-2xl font-semibold mb-4">
+    Ici vous pouvez trouver tous les evenements de l'université de Namur et autour pour y participer.<br></br>
+    Il est aussi possible d'y collaborer pour gagner des points, utilisés pour avoir des evenements gratuits!
+  </h2><br></br>
       <h1 className="text-3xl font-bold text-center mb-6">Evènements à venir</h1>
 
       {Object.keys(events).map(category => (
