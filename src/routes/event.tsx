@@ -20,15 +20,15 @@ const Event = () => {
     return <p>No events found...</p>;
   }
   return (
-    <div className="event-detail-container">
+    <div className="text-center">
       {/* Image de l'événement */}
       <div className="event-image">
-        <img src="{events.img}" alt="Event" />
+        <img src="{event.img}" />
       </div>
 
       {/* Description de l'événement */}
       <div className="event-description">
-        <h1>{event.name}</h1>
+        <h1 className="text-3xl font-bold text-center mb-6">{event.name}</h1>
         <p>
           {event.description}
         </p>
@@ -37,14 +37,15 @@ const Event = () => {
       {/* Choix pour les collaborateur et participant */}
       <div className="event-options">
         <div className="option">
-          <h3>Collaborateurs</h3>
-          <p>Gagnez des pièces virtuelles pour votre participation !</p>
-          <button className="option-btn">Devenir Collaborateur</button>
+          <h3 className="text-2xl font-semibold mb-4">Collaborateurs</h3>
+          <p className="text-xl font-semibold mb-4">Gagnez des pièces virtuelles pour votre participation !</p>
+          <button className="bg-accent text-accent-content btn btn-primary mt-2">Devenir Collaborateur</button>
         </div>
+        <br></br>
         <div className="option">
-          <h3>Participants</h3>
-          <p>Participez et dépensez de l'argent ou des pièces virtuelles !</p>
-          <button className="option-btn">Participer</button>
+          <h3 className="text-2xl font-semibold mb-4">Participants</h3>
+          <p className="text-xl font-semibold mb-4">Participez et dépensez de l'argent ou des pièces virtuelles !</p>
+          <button className="bg-accent text-accent-content btn btn-primary mt-2">Participer</button>
         </div>
       </div>
     </div>
