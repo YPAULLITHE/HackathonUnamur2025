@@ -53,7 +53,7 @@ const EventCarousel = () => {
   {/* Section with Styled Background */}
   <div className="bg-gradient-to-r from-blue-200 to-blue-100 rounded-xl p-8 shadow-md">
     <h2 className="text-center text-xl sm:text-2xl font-semibold text-gray-700 leading-relaxed">
-      📢 Ici vous pouvez trouver tous les évènements de l'université de Namur et autour pour y participer.
+      📢 Ici vous pouvez trouver tous les événements de l'université de Namur et autour pour y participer.
       <br />
       🎟️ Il est aussi possible d'y collaborer pour gagner des points, utilisés pour avoir des événements gratuits!
     </h2>
@@ -61,13 +61,13 @@ const EventCarousel = () => {
 
   {/* Section Title with Decorative Line */}
   <div className="relative text-center">
-    <h1 className="text-4xl font-bold text-gray-800">Evènements à venir</h1>
+    <h1 className="text-4xl font-bold text-gray-800">Evénements à venir</h1>
     <div className="absolute left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mt-2"></div>
   </div>
 
       {Object.keys(events).map(category => (
         <div key={category} className="relative">
-          <h2 className="text-2xl font-semibold mb-4">{category} Evènements</h2>
+          <h2 className="text-2xl font-semibold mb-4">{category} Evénements</h2>
 
           {/* Scroll Left Button */}
           <button
