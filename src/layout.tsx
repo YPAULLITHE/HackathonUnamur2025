@@ -6,7 +6,7 @@ import { faChevronDown, faAngleRight, faBars } from "@fortawesome/free-solid-svg
 
 const member = {
   points:100,
-  img:"https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+  img:"src/icon.png"
 }
 
 export default function Layout() {
@@ -63,7 +63,7 @@ export default function Layout() {
                 </div>
           <div className="avatar">
                 &nbsp;&nbsp;&nbsp;&nbsp;
-            <div className="h-16 rounded-full">
+            <div className="h-24 rounded-full">
               <img src={member.img} />
             </div>
           </div>
