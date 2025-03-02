@@ -52,6 +52,7 @@ export default function Layout() {
           <ul className="menu menu-horizontal px-1 hidden lg:flex z-10">{menu("horizontal")}</ul>
         </section>
         <section className="navbar-middle w-full">
+        <h1 className="text-4xl font-bold text-gray-800">UNEvent</h1>&nbsp;&nbsp;&nbsp;
           <img src="src/th.jpg"></img>
         </section>
         <section className="navbar-end">
