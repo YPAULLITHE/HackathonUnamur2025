@@ -58,7 +58,7 @@ export default function Layout() {
         <section className="navbar-end">
                 <div className="stats bg-base-100 border border-base-300">
                   <div className="stat">
-                    <div className="stat-title">Social Credits</div>
+                    <div className="stat-title">Credits Sociaux</div>
                     <div className="stat-value">{member.points} 🏆</div>
                 </div>
                 </div>
