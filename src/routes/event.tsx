@@ -18,7 +18,7 @@ const Event = () => {
   //}
 
   return (
-    <div className="text-center p-8">
+    <div className="text-center p-10">
       {/* Event Image & Description Container */}
       <div className="flex items-center justify-start gap-20 pl-20">
         {/* Event Image */}
@@ -38,7 +38,7 @@ const Event = () => {
       </div>
 
       {/* Collaborateurs & Participants Section */}
-      <div className="flex justify-center items-start mt-20 gap-16">
+      <div className="flex justify-center items-start mt-20 gap-64">
         {/* Collaborateurs */}
         <div className="bg-white p-6 rounded-xl shadow-md flex-1 max-w-md">
           <h3 className="text-2xl font-semibold mb-2">Collaborateurs</h3>
